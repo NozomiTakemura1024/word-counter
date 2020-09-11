@@ -1,0 +1,327 @@
+@charset "UTF-8";
+@import url(./base_style.css);
+/* PC-SP関係なく同じ命令を当てる内容を記載したCSS */
+@media (max-width: 549px) {
+  header {
+    /* z-index */
+  }
+  header .header_logo {
+    display: none;
+  }
+  header .header_logo_sp {
+    width: 100%;
+    height: 8vh;
+  }
+  header .header_logo_sp img {
+    display: block;
+    width: 200px;
+    margin: 0 auto;
+    padding: 13px 0 0 0;
+  }
+  header .nav_toggle {
+    position: fixed;
+    top: 12px;
+    left: 18px;
+    height: 15px;
+    cursor: pointer;
+  }
+  header .nav_toggle div {
+    position: relative;
+    width: 15px;
+  }
+  header .nav_toggle span {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 2px;
+    left: 0;
+    background: #111;
+    -webkit-transition: top .5s ease, -webkit-transform .6s ease-in-out;
+    transition: top .5s ease, -webkit-transform .6s ease-in-out;
+    transition: transform .6s ease-in-out, top .5s ease;
+    transition: transform .6s ease-in-out, top .5s ease, -webkit-transform .6s ease-in-out;
+  }
+  header .nav_toggle span:nth-child(1) {
+    top: 0;
+  }
+  header .nav_toggle span:nth-child(2) {
+    top: 7px;
+  }
+  header .nav_toggle span:nth-child(3) {
+    top: 14px;
+  }
+  header .nav_toggle:hover span:nth-child(1) {
+    top: 2px;
+  }
+  header .nav_toggle:hover span:nth-child(3) {
+    top: 12px;
+  }
+  header .nav_toggle {
+    z-index: 1000;
+  }
+  header .gloval_nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    font-size: 2.9rem;
+    color: #111;
+    text-align: center;
+    background: #fff;
+    visibility: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    opacity: 0;
+    z-index: 990;
+    -webkit-transition: opacity .6s ease, visibility .6s ease;
+    transition: opacity .6s ease, visibility .6s ease;
+  }
+  header .gloval_nav a {
+    display: block;
+    padding: 10px 0;
+    color: #fff;
+    text-decoration: none;
+    -webkit-transition: color .6s ease;
+    transition: color .6s ease;
+  }
+  header .gloval_nav a:hover {
+    color: #666;
+  }
+  header .gloval_nav ul {
+    list-style: none;
+  }
+  header .gloval_nav ul li {
+    opacity: 0;
+    -webkit-transform: translateX(200px);
+            transform: translateX(200px);
+    -webkit-transition: opacity .2s ease, -webkit-transform .6s ease;
+    transition: opacity .2s ease, -webkit-transform .6s ease;
+    transition: transform .6s ease, opacity .2s ease;
+    transition: transform .6s ease, opacity .2s ease, -webkit-transform .6s ease;
+  }
+  /*openクラスをbodyに付けたから、.openの中に#headerを入れないといけないからここに記述*/
+  .open header .nav_toggle span {
+    background: #111;
+  }
+  .open header .nav_toggle span:nth-child(1) {
+    top: 15px;
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+  }
+  .open header .nav_toggle span:nth-child(2) {
+    top: 15px;
+    width: 0;
+    left: 50%;
+  }
+  .open header .nav_toggle span:nth-child(3) {
+    top: 15px;
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+  }
+  /* open */
+  .open header {
+    overflow: hidden;
+  }
+  .open header .gloval_nav {
+    visibility: visible;
+    opacity: 1;
+  }
+  .open header .gloval_nav li {
+    font-family: 'ＭＳ Ｐゴシック';
+    font-size: 1.6rem;
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    -webkit-transition: opacity .9s ease, -webkit-transform .1s ease;
+    transition: opacity .9s ease, -webkit-transform .1s ease;
+    transition: transform .1s ease, opacity .9s ease;
+    transition: transform .1s ease, opacity .9s ease, -webkit-transform .1s ease;
+  }
+  .open header .gloval_nav li a {
+    color: #111;
+  }
+  main .side_menu {
+    display: none;
+  }
+  main .main_contents {
+    display: inline-block;
+    width: 100%;
+    height: 92vh;
+  }
+  main .main_contents .contents_top {
+    display: block;
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 30px;
+  }
+  main .main_contents .contents_top .work_item {
+    display: block;
+    width: 100%;
+  }
+  main .main_contents .contents_top .work_item img {
+    width: 100%;
+    height: auto;
+    padding: 2px;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+  main .main_contents .contents_about {
+    display: block;
+    width: 100%;
+  }
+  main .main_contents .contents_about .text {
+    display: block;
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 40px;
+  }
+  main .main_contents .contents_about .text P {
+    font-size: 1.6rem;
+    font-family: 'Noto Serif JP', serif;
+    line-height: 3.4rem;
+  }
+  main .main_contents .contents_about .skills {
+    display: block;
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 40px;
+  }
+  main .main_contents .contents_about .skills h1 {
+    height: 70px;
+    font-size: 1.6rem;
+    font-family: "Times New Roman";
+    text-align: center;
+  }
+  main .main_contents .contents_about .skills .slills_box {
+    width: 100%;
+  }
+  main .main_contents .contents_about .skills .slills_box section {
+    display: block;
+    width: 100%;
+    padding-bottom: 20px;
+  }
+  main .main_contents .contents_about .skills .slills_box section h2 {
+    display: block;
+    height: 40px;
+    text-align: center;
+  }
+  main .main_contents .contents_about .skills .slills_box section h2 i, main .main_contents .contents_about .skills .slills_box section h2 span {
+    padding: 0 5px;
+    display: inline;
+    font-size: 1.6rem;
+    font-weight: bold;
+  }
+  main .main_contents .contents_about .skills .slills_box section p {
+    padding: 0 5px;
+    font-size: 1.4rem;
+    font-family: 'Noto Serif JP', serif;
+    line-height: 3.4rem;
+  }
+  main .main_contents .contents_about .profile {
+    position: relative;
+    display: block;
+    width: 90%;
+    margin: 0 auto;
+    padding-bottom: 50px;
+  }
+  main .main_contents .contents_about .profile h1 {
+    height: 70px;
+    font-size: 1.6rem;
+    font-family: "Times New Roman";
+    text-align: center;
+  }
+  main .main_contents .contents_about .profile p {
+    font-size: 1.4rem;
+    font-family: 'Noto Serif JP', serif;
+    line-height: 3rem;
+  }
+  main .main_contents .contents_contact {
+    width: 90%;
+    padding: 30px 0;
+    margin: 0 auto;
+  }
+  main .main_contents .contents_contact h1 {
+    font-size: 1.6rem;
+    font-family: 'Noto Serif JP', serif;
+    line-height: 3.4rem;
+  }
+  main .main_contents .contents_contact ul {
+    padding-left: 20px;
+  }
+  main .main_contents .contents_contact ul li {
+    font-size: 1.2rem;
+    font-family: 'Noto Serif JP', serif;
+    line-height: 3.4rem;
+  }
+  main .main_contents .contents_contact ul li a {
+    padding-left: 20px;
+    color: #000;
+    font-size: 1.4rem;
+  }
+  main .main_contents .contents_works {
+    width: 90%;
+    padding-bottom: 30px;
+    margin: 0 auto;
+  }
+  main .main_contents .contents_works .works_list a img {
+    width: 100%;
+    height: auto;
+  }
+  main .main_contents .contents_works1 {
+    width: 100%;
+    margin: 50px 0;
+  }
+  main .main_contents .contents_works1 a {
+    display: block;
+    width: 100%;
+    padding: 40px 0;
+  }
+  main .main_contents .contents_works1 a img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  main .main_contents .contents_works1 h2 {
+    display: block;
+    padding: 15px;
+    font-family: 'Noto Serif JP', serif;
+    font-size: 1.4rem;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+  }
+  main .main_contents .contents_works1 p {
+    display: block;
+    padding: 0 15px;
+    font-family: 'Noto Serif JP', serif;
+    font-size: 1rem;
+    letter-spacing: 0.1em;
+  }
+  main .footer {
+    text-align: right;
+    padding: 0 0 20px 0;
+  }
+  main .footer .copy_rights i {
+    display: inline;
+    color: #a0a0a0;
+    font-size: 0.6rem;
+  }
+  main .footer .copy_rights p {
+    display: inline;
+    color: #a0a0a0;
+    font-size: 0.6rem;
+  }
+}
+/*# sourceMappingURL=sp_style.css.map */

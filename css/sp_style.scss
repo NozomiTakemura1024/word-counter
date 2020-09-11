@@ -1,0 +1,317 @@
+@charset "UTF-8";
+@import url(./base_style.css); /* PC-SP関係なく同じ命令を当てる内容を記載したCSS */
+
+@media (max-width: 549px) {
+    header {
+        .header_logo {
+            display: none;
+        }
+        .header_logo_sp {
+            width: 100%;
+            height: 8vh;
+            img {
+                display: block;
+                width: 200px;
+                margin: 0 auto;
+                padding: 13px 0 0 0;
+            }
+        }
+        .nav_toggle {
+            position: fixed;
+            top: 12px;
+            left: 18px;
+            height: 15px;
+            cursor: pointer;
+            div {
+                position: relative;
+                width: 15px;
+            }
+            span {
+                position: absolute;
+                display: block;
+                width: 100%;
+                height: 2px;
+                left: 0;
+                background: #111;
+                transition: transform .6s ease-in-out, top .5s ease;
+                &:nth-child(1){
+                    top: 0;
+                }
+                &:nth-child(2){
+                    top: 7px;
+                }
+                &:nth-child(3){
+                    top: 14px;
+                }
+            }
+            &:hover span:nth-child(1){
+                top: 2px;
+            }
+            &:hover span:nth-child(3){
+                top: 12px;
+            }
+        }
+        /* z-index */
+        .nav_toggle {
+            z-index: 1000;
+        }
+        .gloval_nav {
+            display: flex;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            font-size: 2.9rem;
+            color: #111;
+            text-align: center;
+            background: #fff;
+            visibility: hidden;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            z-index: 990;
+            transition: opacity .6s ease, visibility .6s ease;
+            a {
+                display: block;
+                padding: 10px 0;
+                color: #fff;
+                text-decoration: none;
+                transition: color .6s ease;
+                &:hover {
+                    color: #666;
+                }
+            }
+            ul {
+                list-style: none;
+                li {
+                    opacity: 0;
+                    transform: translateX(200px);
+                    transition: transform .6s ease, opacity .2s ease;
+                }
+            }
+        }
+    }
+    /*openクラスをbodyに付けたから、.openの中に#headerを入れないといけないからここに記述*/
+    .open {
+        header {
+            .nav_toggle {
+                span {
+                    background: #111;
+                    &:nth-child(1){
+                        top: 15px;
+                        transform: rotate(45deg);
+                    }
+                    &:nth-child(2){
+                        top: 15px;
+                        width: 0;
+                        left: 50%;
+                    }
+                    &:nth-child(3){
+                        top: 15px;
+                        transform: rotate(-45deg);
+                    }
+                }
+            }
+        }
+    }
+    /* open */
+    .open {
+        header {
+            overflow: hidden;
+            .gloval_nav {
+                visibility: visible;
+                opacity: 1;
+                li {
+                    font-family: 'ＭＳ Ｐゴシック';
+                    font-size: 1.6rem;
+                    opacity: 1;
+                    transform: translateX(0);
+                    transition: transform .1s ease, opacity .9s ease;
+                    a {
+                        color: #111;
+                    }
+                }
+            }
+        }
+    }
+    main {
+        .side_menu {
+            display: none;
+        }
+        .main_contents {
+            display: inline-block;
+            width: 100%;
+            height: 92vh;
+            .contents_top {
+                display: block;
+                width: 90%;
+                margin: 0 auto;
+                margin-bottom: 30px;
+                .work_item {
+                    display: block;
+                    width: 100%;
+                    img {
+                        width: 100%;
+                        height: auto;
+                        padding: 2px;
+                        box-sizing: border-box;
+                    }
+                }
+            }
+            .contents_about {
+                display: block;
+                width: 100%;
+                .text {
+                    display: block;
+                    width: 90%;
+                    margin: 0 auto;
+                    margin-top: 20px;
+                    margin-bottom: 40px;
+                    P {
+                        font-size: 1.6rem;
+                        font-family: 'Noto Serif JP', serif;
+                        line-height: 3.4rem;
+                    }
+                }
+                .skills {
+                    display: block;
+                    width: 90%;
+                    margin: 0 auto;
+                    margin-bottom: 40px;
+                    h1 {
+                        height: 70px;
+                        font-size: 1.6rem;
+                        font-family: "Times New Roman";
+                        text-align: center;
+                    }
+                    .slills_box {
+                        width: 100%;
+                        section {
+                            display: block;
+                            width: 100%;
+                            padding-bottom: 20px;
+                            h2 {
+                                display: block;
+                                height: 40px;
+                                text-align: center;
+                                i, span {
+                                    padding: 0 5px;
+                                    display: inline;
+                                    font-size: 1.6rem;
+                                    font-weight: bold;
+                                }
+                            }
+                            p {
+                                padding: 0 5px;
+                                font-size: 1.4rem;
+                                font-family: 'Noto Serif JP', serif;
+                                line-height: 3.4rem;
+                            }
+                        }
+                    }    
+                }
+                .profile {
+                    position: relative;
+                    display: block;
+                    width: 90%;
+                    margin: 0 auto;
+                    padding-bottom: 50px;
+                    h1 {
+                        height: 70px;
+                        font-size: 1.6rem;
+                        font-family: "Times New Roman";
+                        text-align: center;
+                    }
+                    p {
+                         font-size: 1.4rem;
+                        font-family: 'Noto Serif JP', serif;
+                        line-height: 3rem;
+                    }
+                }
+            }
+            .contents_contact {
+                width: 90%;
+                padding: 30px 0;
+                margin: 0 auto;
+                h1 {
+                    font-size: 1.6rem;
+                    font-family: 'Noto Serif JP', serif;
+                    line-height: 3.4rem;
+                }
+                ul {
+                    padding-left: 20px;
+                    li {
+                        font-size: 1.2rem;
+                        font-family: 'Noto Serif JP', serif;
+                        line-height: 3.4rem;
+                        a {
+                            padding-left: 20px;
+                            color: #000;
+                            font-size: 1.4rem;
+                        }
+                    }
+                }
+            }
+            .contents_works {
+                width: 90%;
+                padding-bottom: 30px;
+                margin: 0 auto;
+                .works_list {
+                    a {
+                        img {
+                            width: 100%;
+                            height: auto;
+                        }
+                    }
+                }
+            }
+            .contents_works1 {
+                width: 100%;
+                margin: 50px 0;
+                a {
+                    display: block;
+                    width: 100%;
+                    padding: 40px 0;
+                    img {
+                        display: block;
+                        width: 100%;
+                        height: auto;
+                    }
+                }
+                h2 {
+                    display: block;
+                    padding: 15px; 
+                    font-family: 'Noto Serif JP', serif;
+                    font-size: 1.4rem;
+                    font-weight: bold;
+                    letter-spacing: 0.1em;
+                }
+                p {
+                    display: block;
+                    padding: 0 15px;
+                    font-family: 'Noto Serif JP', serif;
+                    font-size: 1rem;
+                    letter-spacing: 0.1em;
+                }
+            }
+        }
+        .footer {
+            text-align: right;
+            padding: 0 0 20px 0; 
+            .copy_rights {
+                i {
+                    display: inline;
+                    color: #a0a0a0;
+                    font-size: 0.6rem;
+                }
+                p {
+                    display: inline;
+                    color: #a0a0a0;
+                    font-size: 0.6rem;
+                }
+            }
+        }
+    }
+}

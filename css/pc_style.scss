@@ -1,0 +1,263 @@
+@charset "UTF-8";
+@import url(./base_style.css); /* PC-SP関係なく同じ命令を当てる内容を記載したCSS */
+
+@media (min-width: 550px) {
+    header {
+        width: 100%;
+        height: 120px;
+        .header_logo {
+            position: relative;
+            img {
+                position: absolute;
+                top: 50px;
+                left: 50px;
+                cursor: pointer;
+            }
+            a {
+                position: absolute;
+                top: 60px;
+                left: 80px;
+                color: #3d3d3d;
+                i {
+                    font-size: 1.8rem
+                }
+            }
+        }
+        .header_logo_sp {
+            display: none;
+        }
+        .nav_toggle {
+            display: none;
+        }
+        .gloval_nav {
+            display: none;
+        }
+    }
+    main {
+        display: flex;
+        .side_menu {
+            position: relative;
+            display: inline-block;
+            width: 30%;
+            ul {
+                position: absolute;
+                left: 100px;
+                li {
+                    padding: 10px 0;
+                    font-size: 1.6rem;
+                    font-family: 'ＭＳ Ｐゴシック';
+                    a {
+                        position: relative;
+                        display: inline-block;
+                        color: #a0a0a0;
+                        text-decoration: none;
+                        transition: all .3s;
+                    }
+                    a:hover {
+                        color: #111;
+                    }
+                    a::after {
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        content: '';
+                        width: 0;
+                        height: 1px;
+                        background-color: #111;
+                        transition: .3s;
+                    }
+                    a:hover::after {
+                        width: 100%;
+                    }
+                }
+            }
+            .sns_btn {
+                position: absolute;
+                top: 135px;
+                left: 100px;
+                a {
+                    padding-right: 10px;
+                    color: #a0a0a0;
+                    font-size: 1.6rem;
+                    transition: all .3s;
+                }
+                a:hover {
+                    color: #111;
+                }
+            }
+        }
+        .main_contents {
+            display: inline-block;
+            width: 70%;
+            .contents_top {
+                display: block;
+                width: 100%;
+                margin-bottom: 50px;
+                .work_item {
+                    display: inline-block;
+                    width: 40%;
+                    a {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+                    img {
+                        width: 100%;
+                        height: auto;
+                        padding: 5px;
+                        box-sizing: border-box;
+                        transition: 0.5s;
+                    }
+                    img:hover {
+                        transform: scale(1.02, 1.02);
+                    }
+                }
+            }
+            .contents_about {
+                display: block;
+                width: 100%;
+                .text {
+                    display: block;
+                    width: 80%;
+                    padding-bottom: 50px;
+                    text-align: center;
+                    P {
+                        font-size: 1.6rem;
+                        font-family: 'Noto Serif JP', serif;
+                        line-height: 3.4rem;
+                    }
+                }
+                .skills {
+                    display: block;
+                    width: 80%;
+                    padding-bottom: 50px;
+                    h1 {
+                        height: 70px;
+                        font-size: 1.6rem; 
+                        font-family: "Times New Roman";
+                        text-align: center;
+                    }
+                    .slills_box {
+                        display: flex;
+                        section {
+                            display: inline-block;
+                            width: 50%;
+                            h2 {
+                                display: block;
+                                height: 40px;
+                                text-align: center;
+                                i, span {
+                                    padding: 0 5px;
+                                    display: inline;
+                                    font-size: 1.6rem;
+                                    font-weight: bold;
+                                }
+                                span {
+                                    font-family: 'Noto Serif JP', serif;
+                                }
+                            }
+                            p {
+                                padding: 0 5px;
+                                font-size: 1.4rem;
+                                font-family: 'Noto Serif JP', serif;
+                                line-height: 3.4rem;
+                            }
+                        }
+                    }    
+                }
+                .profile {
+                    position: relative;
+                    display: block;
+                    width: 80%;
+                    padding-bottom: 50px;
+                    h1 {
+                        height: 40px;
+                        font-size: 1.6rem;
+                        font-family: "Times New Roman";
+                        text-align: center;
+                    }
+                    p {
+                        font-size: 1.4rem;
+                        font-family: 'Noto Serif JP', serif;
+                        line-height: 3rem;
+                    }
+                }
+            }
+            .contents_contact {
+                padding-bottom: 50px;
+                h1 {
+                    font-size: 1.6rem;
+                    font-family: 'Noto Serif JP', serif;
+                    line-height: 3.4rem;
+                }
+                ul {
+                    padding-left: 20px;
+                    li {
+                        font-size: 1.4rem;
+                        font-family: 'Noto Serif JP', serif;
+                        line-height: 3.4rem;
+                        a {
+                            padding-left: 20px;
+                            color: #000;
+                        }
+                    }
+                }
+            }
+            .contents_works {
+                width: 100%;
+                margin-bottom: 50px;
+                .works_list {
+                    a {
+                        transition: 0.5s;
+                        img {
+                            width: 85%;
+                            height: auto;
+                        }
+                    }
+                    a:hover {
+                        opacity: 0.5;
+                    }
+                }
+            }
+            .contents_works1 {
+                width: 100%;
+                margin-bottom: 50px;
+                a {
+                    img {
+                        width: 90%;
+                        height: auto;
+                    }
+                }
+                h2 {
+                    padding: 15px 0 10px 0; 
+                    font-family: 'Noto Serif JP', serif;
+                    font-size: 1.6rem;
+                    font-weight: bold;
+                    letter-spacing: 0.1em;
+                }
+                p {
+                    padding: 0 0 0 10px;
+                    font-family: 'Noto Serif JP', serif;
+                    font-size: 1.2rem;
+                    letter-spacing: 0.1em;
+                }
+            }
+            .footer {
+                text-align: right;
+                padding: 0 20px 20px 0; 
+                .copy_rights {
+                    i {
+                        display: inline;
+                        color: #a0a0a0;
+                        font-size: 0.6rem;
+                    }
+                    p {
+                        display: inline;
+                        color: #a0a0a0;
+                        font-size: 0.6rem;
+                    }
+                }
+            }
+        }
+    }
+}
